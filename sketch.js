@@ -82,12 +82,12 @@ function draw() {
       score = score + Math.round(getFrameRate()/60);
     
     if (score>0 && score%100 === 0){
-      playSound(Point);
+      song.play(Point);
     }
 
       if(keyDown("space")) {
         trex.velocityY = -10;
-        playSound (jump);
+        song.play(jump);
       }
 
       trex.velocityY = trex.velocityY + 0.8;
@@ -101,7 +101,7 @@ function draw() {
       
       if (trex.isTouching(obstaclesGroup)) { 
         gameState = END;  
-        playSound (die);
+        song.play (die);
       }
   } 
   else if (gameState === END){
